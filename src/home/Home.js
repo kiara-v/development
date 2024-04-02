@@ -9,6 +9,7 @@ import {
 import { Error } from "../utils/Error";
 import { MovieList } from "../movie/List";
 import { FilterMovies } from "../movie/Filter";
+import { Favorites } from "../favorite/Favorites";
 
 export const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -75,6 +76,8 @@ export const Home = () => {
     }
   };
 
+  const favMovies = JSON.parse(localStorage.getItem("fav_movies")) || [];
+
   return (
     <>
       <div className="container">
@@ -91,6 +94,7 @@ export const Home = () => {
                 <SortBar onSort={onSort} />
                 <FilterMovies onFilter={onFilter} />
               </div>
+              {/* <Favorites /> */}
             </div>
             <div className="col-12 col-md-9">
               <MovieList movies={movies} />

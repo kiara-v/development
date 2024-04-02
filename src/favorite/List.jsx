@@ -69,7 +69,7 @@ export const FavoriteMovieList = () => {
         <div class="pageTitle">Favorite Movies</div>
         </div>
           {error ? <Error message={error} /> : ""}
-          <div className="row">
+          {/* <div className="row">
             <div className="col-12 col-md-3 sort-bar">
               <div className="card shadow-lg p-2">
                 <SortBar onSort={onSort} />
@@ -79,7 +79,8 @@ export const FavoriteMovieList = () => {
             <div className="col-12 col-md-9">
               <MovieList movies={movies} />
             </div>
-          </div>
+          </div> */}
+          <MovieList movies={movies} />
         </div>
   );
 };
