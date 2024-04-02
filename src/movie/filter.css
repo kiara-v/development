@@ -1,0 +1,128 @@
+.sort-bar {
+    margin-bottom: 50px;
+}
+
+input {
+    color: inherit;
+    background: 0px center;
+    opacity: 1;
+    width: 100%;
+    grid-area: 1 / 2;
+    font: inherit;
+    min-width: 2px;
+    border: 0px;
+    margin: 0px;
+    outline: 0px;
+    padding: 0px;
+}
+
+.pageHeader {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: #fff;
+	text-align: center;
+	position: relative;
+	max-width: 800px;
+	margin: 0 auto; */
+}
+@media only screen and (min-width: 768px) {
+    .pageHeader {
+        flex-direction: row;
+   }
+}
+.pageTitle {
+    font-size: 51px;
+	font-weight: 750;
+    line-height: 34px;
+    color: white;
+    margin-bottom: 42px;
+}
+@media only screen and (min-width: 768px) {
+    .pageTitle {
+        margin-bottom: 0;
+   }
+}
+.filters {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+@media only screen and (min-width: 768px) {
+    .filters {
+        flex-direction: row;
+   }
+}
+.filters .react-select-container.genresDD {
+    width: 100%;
+}
+@media only screen and (min-width: 768px) {
+    .filters .react-select-container.genresDD {
+        max-width: 500px;
+        min-width: 250px;
+   }
+}
+.filters .react-select-container.sortbyDD {
+    width: 100%;
+    flex-shrink: 0;
+}
+@media only screen and (min-width: 768px) {
+    .filters .react-select-container.sortbyDD {
+        width: 250px;
+   }
+}
+.filters .react-select-container .react-select__control {
+    border: 0;
+    outline: 0;
+    box-shadow: none;
+    background-color: #fff;
+    border-radius: 20px;
+}
+.filters .react-select-container .react-select__control .react-select__value-container .react-select__placeholder, .filters .react-select-container .react-select__control .react-select__value-container .react-select__input-container {
+    color: #000;
+    cursor: pointer;
+    margin: 0 10px;
+}
+.filters .react-select-container .react-select__control .react-select__single-value {
+    color: #000;
+}
+.filters .react-select-container .react-select__control .react-select__multi-value {
+    background-color: black;
+    border-radius: 10px;
+}
+.filters .react-select-container .react-select__control .react-select__multi-value .react-select__multi-value__label {
+    color: #000;
+}
+.filters .react-select-container .react-select__control .react-select__multi-value .react-select__multi-value__remove {
+    background-color: transparent;
+    color: #000;
+    cursor: pointer;
+}
+.filters .react-select-container .react-select__control .react-select__multi-value .react-select__multi-value__remove:hover {
+    color: black;
+}
+.filters .react-select-container .react-select__menu {
+    top: 40px;
+    margin: 0;
+    padding: 0;
+}
+.content {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+@media only screen and (min-width: 768px) {
+    .content {
+        gap: 20px;
+   }
+}
+.content .movieCard .posterBlock {
+    margin-bottom: 30px;
+}
