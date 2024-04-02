@@ -4,18 +4,18 @@ const apiUrl = process.env.REACT_APP_API_URL;
 
 export const GetPopular = () => {
   return axios.get(`${apiUrl}/movie/popular`, {
-    params: { language: "en-US" },
+    params: { language: "en-US", pageSize: 100, page: 1},
   });
 };
 
 export const SearchMovies = (searchText) => {
   return axios.get(`${apiUrl}/search/movie`, {
-    params: { language: "en-US", query: searchText, adult: false },
+    params: { language: "en-US", query: searchText, adult: false, pageSize: 100, page: 1 },
   });
 };
 
 export const DiscoverMovies = (sortby = null, filterby = null) => {
-  let queryParams = { adult: false };
+  let queryParams = { adult: false, pageSize: 100, page: 1 };
 
   if (sortby) queryParams["sort_by"] = sortby;
 
