@@ -10,3 +10,4 @@
 
 ## Bugs
 * If you revert the filter back to the original state, you might have to click the Filter button twice to see results.
+* It only shows 20 results per page, as this is the default returned from axios.
