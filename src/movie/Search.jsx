@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Provider, useSelector } from 'react-redux';
-import axios from "axios";
 import Img from '../lazyLoadImage/img';
 import "../home/hero.css";
-import useFetch from '../hooks/useFetch';
+import {
+  GetPopular,
+} from "../services/MovieService";
 
 export const SearchMovie = ({ onSearch }) => {
   const onInputChange = (e) => {
@@ -13,18 +13,22 @@ export const SearchMovie = ({ onSearch }) => {
   const [background, setBackground] = useState("");
   // const data = axios.get(`${apiUrl}/movie/upcoming`, {
   //   params: { language: "en-US" },
-  // }).then((res) => res.data);
-  const { data, loading } = useFetch("/movie/upcoming");
+  // });
+  const loadBG = async () => {
+    const data = (await GetPopular()).data;
+      const bg = "https://image.tmdb.org/t/p/original" + data?.results?.[Math.floor(Math.random() * 20)].backdrop_path
+      setBackground(bg);
+      console.log(data)
+  };
+  // const { data, loading } = useFetch("/movie/upcoming");
 
   useEffect(() => {
-    const bg = "https://image.tmdb.org/t/p/original" + data?.results?.[Math.floor(Math.random() * 20)].backdrop_path
-    setBackground(bg);
-    console.log(data)
-  }, [data]);
+    loadBG();
+  }, []);
 
   return (
     <div class="heroBanner">
-      {!loading && <div className="backdrop-img">
+      {<div className="backdrop-img">
         <Img src={background} />
       </div>}
       <div class="opacity-layer"></div>
